@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal&display=swap');
+label {
+
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.vrLine {
+
+    border-left:1px solid #8a8a8a;
+    height:400px;
+}
+
+.listBox {
+
+    width:90%;
+
+} 
+
+.welcTxt {
+
+    color : #929497;
+    font-family: 'Tajawal', sans-serif;
+
+}

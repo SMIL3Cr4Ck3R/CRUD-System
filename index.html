@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CRUD System">
+    <meta name="author" content="Mohammed Tahayna">
+    <title>CRUD System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand crudBrand bg-primary text-light p-2 border rounded fw-bold" href="https://www.linkedin.com/in/mohammed-tahaynah/" target="_blank">CRUD System</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Source Code</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-4 d-flex align-items-center justify-content-center">
+
+        <div class="infoBanner col-4 m-auto">
+            <img src="/assets/img/CRUD.png" width="100%" alt="C.R.U.D">
+            <h1 class="text-center text-uppercase welcTxt mt-4">Welcome to CRUD System Demo</h1>
+
+        </div>
+
+        <div class="vrLine col-1"></div>
+
+        <div class="formDiv w-50 col-7">
+
+            <div class="mb-3 validCheck cNameDiv">
+                <label for="cName" class="form-label">Course Name</label>
+                <input id="cName" type="text" class="form-control" placeholder="JavaScript">
+                <div class="feedbackReturn d-none">asd</div>
+            </div>
+
+            <div class="mb-3 validCheck cCatDiv">
+                <label for="cCat" class="form-label">Course Catagory</label>
+                <input id="cCat" type="text" class="form-control" placeholder="Web Development">
+                <div class="feedbackReturn1 d-none">asd</div>
+            </div>
+
+            <div class="mb-3 validCheck cPriceDiv">
+                <label for="cPrice" class="form-label">course price</label>
+                <input id="cPrice" type="text" class="form-control" placeholder="999.99$">
+                <div class="feedbackReturn2 d-none">asd</div>
+            </div>
+
+            <div class="mb-3 validCheck cDescDiv">
+                <label for="cDesc" class="form-label">Course Description</label>
+                <textarea id="cDesc" type="text" class="form-control" placeholder="lorem3"></textarea>
+                <div class="feedbackReturn3 d-none">asd</div>
+            </div>
+
+            <div class="btnsDiv mt-4">
+                <button id="addBtn" type="submit" class="btn btn-primary ">Add Course</button>
+                <button id="clearInptsBtn" type="submit" class="btn btn-outline-danger">Clear</button>
+            </div>
+        </div>
+
+        <!-- off canvas  -->
+        <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop"
+            aria-labelledby="staticBackdropLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="staticBackdropLabel">Update Course Information</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div>
+
+                    <div class="mb-3 updateDiv cNameUpdateDiv">
+                        <label for="cNameUpdate" class="form-label">New Course Name</label>
+                        <input id="cNameUpdate" type="text" class="form-control" placeholder="JavaScript">
+
+                    </div>
+                    <div class="mb-3 updateDiv cCatDivUpdateDiv">
+                        <label for="cCatDivUpdate" class="form-label">New Course Catagory</label>
+                        <input id="cCatDivUpdate" type="text" class="form-control" placeholder="Web Development">
+
+                    </div>
+                    <div class="mb-3 updateDiv cPriceUpdateDiv">
+                        <label for="cPriceUpdate" class="form-label">New Course price</label>
+                        <input id="cPriceUpdate" type="text" class="form-control" placeholder="999.99$">
+
+                    </div>
+                    <div class="mb-3 validCheck cDescUpdateDiv">
+                        <label for="cDescUpdate" class="form-label">New Course Description</label>
+                        <textarea id="cDescUpdate" type="text" class="form-control" placeholder="lorem3"></textarea>
+                    </div>
+                    <button id="updateDataBtn" class="btn btn-secondary" >UPDATE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="listBox m-auto pt-4 pb-5">
+
+        <hr>
+        <div class="tableDiv">
+            <table class="table table-striped w-75 m-auto">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Catagory</th>
+                        <th scope="col">price</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tableData">
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+
+    <script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>
