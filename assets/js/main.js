@@ -13,7 +13,7 @@ var courseObjects = [];
 
 // to get data from localstorage
 updateTable();
-
+-
 addBtn.addEventListener('click', function () {
 
     if (inputArr[0].value.match(/^[A-Z][A-Za-z]{2,8}$/g) && inputArr[1].value.match(/^[A-Z][A-Za-z]{2,}$/g)
@@ -35,7 +35,6 @@ addBtn.addEventListener('click', function () {
             localStorage.setItem( cObj.courseName, JSON.stringify(cObj));
 
             updateTable();
-            //createCObjDiv(courseObjects.length - 1, cObj.courseName, cObj.courseCategory, cObj.coursePrice, cObj.courseDesc);
         } else
             alert("Course exist !, please choose another name");
 
@@ -163,7 +162,7 @@ function validate(index, feedbackID, validator, msg) {
 
         temp.innerHTML = msg;
     }
-}
+}   
 
 function updateCourse(thisCourse) {
 
